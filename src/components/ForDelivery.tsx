@@ -1,4 +1,5 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { Check } from "lucide-react";
 import SectionWrapper from "@/components/SectionWrapper";
 import AppStoreBadges from "@/components/AppStoreBadges";
@@ -12,6 +13,12 @@ const valueProps = [
 
 export default function ForDelivery() {
   const reduced = useReducedMotion();
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const phoneY = useTransform(scrollYProgress, [0, 1], reduced ? [0, 0] : [40, -40]);
 
   return (
     <SectionWrapper
@@ -24,13 +31,14 @@ export default function ForDelivery() {
           <path d="M0,0 L1440,0 L1440,20 Q720,60 0,20 Z" fill="var(--color-warm-100)" />
         </svg>
       </div>
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 md:gap-20 items-center">
+      <div ref={sectionRef} className="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 md:gap-20 items-center">
         {/* Phone mockup — matches tinmen-delivery deliver.tsx */}
         <motion.div
           initial={reduced ? false : { opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          style={{ y: phoneY }}
           className="flex justify-center order-2 md:order-1"
         >
           <div className="w-[250px] h-[500px] md:w-[260px] md:h-[520px] rounded-[2.5rem] border-[6px] border-white/15 bg-warm-50 shadow-xl overflow-hidden">
