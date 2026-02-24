@@ -20,25 +20,17 @@ const FOODS = [
  * plates travel along it. Coordinates scale to the hero container via
  * a manual viewBox→screen mapping (like Wispr's GSAP MotionPathPlugin).
  *
- * Desktop: curve starts off-screen lower-left (below text), arcs up
+ * Desktop only — hidden on mobile for a cleaner hero layout.
+ *
+ * Curve starts off-screen lower-left (below text), arcs up
  * through the center, and exits off-screen right.
  * The "virtual canvas" is 1440×900; anything outside 0–1440 in x
  * falls outside the container and is clipped by overflow:hidden.
  */
-// y=0 is top, y=900 is bottom. The curve:
-// starts at y≈810 (10% from bottom), dips to y=900 (bottom),
-// rises to y=0 (top/peak near right edge of phone), then back to y≈180 (80% up).
-const DESKTOP_PATH =
+const PATH =
   "M -300,600 C -100,700 200,810 450,720 C 650,560 750,300 850,200 C 1000,130 1400,200 1800,550";
-const DESKTOP_VB_W = 1440;
-const DESKTOP_VB_H = 900;
-
-const MOBILE_PATH =
-  "M -80,410 C 0,440 100,450 220,410 C 350,340 480,120 630,30 C 700,10 780,40 900,100";
-const MOBILE_VB_W = 750;
-const MOBILE_VB_H = 500;
-
-// Number of food plates on the curve — higher = denser, like Wispr's tight icon spacing
+const VB_W = 1440;
+const VB_H = 900;
 const PLATE_COUNT = 24;
 // Progress per millisecond — controls speed (lower = slower). ~40s per full cycle.
 const SPEED = 0.000025;
@@ -51,13 +43,8 @@ export default function FoodMarquee() {
   const platesRef = useRef<(HTMLDivElement | null)[]>([]);
   const rafRef = useRef<number>(0);
 
-  const pathD = isMobile ? MOBILE_PATH : DESKTOP_PATH;
-  const vbW = isMobile ? MOBILE_VB_W : DESKTOP_VB_W;
-  const vbH = isMobile ? MOBILE_VB_H : DESKTOP_VB_H;
-  const baseSize = isMobile ? 44 : 60;
-
   useEffect(() => {
-    if (reduced) return;
+    if (reduced || isMobile) return;
 
     const pathEl = pathRef.current;
     const containerEl = containerRef.current;
@@ -71,8 +58,8 @@ export default function FoodMarquee() {
       const elapsed = timestamp - startTime;
 
       const rect = containerEl.getBoundingClientRect();
-      const scaleX = rect.width / vbW;
-      const scaleY = rect.height / vbH;
+      const scaleX = rect.width / VB_W;
+      const scaleY = rect.height / VB_H;
 
       for (let i = 0; i < PLATE_COUNT; i++) {
         const plate = platesRef.current[i];
@@ -94,9 +81,10 @@ export default function FoodMarquee() {
 
     rafRef.current = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(rafRef.current);
-  }, [reduced, isMobile, pathD, vbW, vbH]);
+  }, [reduced, isMobile]);
 
-  if (reduced) return null;
+  // Hidden on mobile and when reduced motion is preferred
+  if (reduced || isMobile) return null;
 
   // Build plate array cycling through food images
   const plates = Array.from({ length: PLATE_COUNT }, (_, i) => FOODS[i % FOODS.length]);
@@ -108,23 +96,23 @@ export default function FoodMarquee() {
       aria-hidden="true"
     >
       {/* Edge fades */}
-      <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-primary to-transparent z-10" />
-      <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-primary-dark to-transparent z-10" />
+      <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-primary to-transparent z-10" />
+      <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-primary-dark to-transparent z-10" />
 
       {/* Hidden SVG — only used for path.getPointAtLength() calculations */}
       <svg
-        viewBox={`0 0 ${vbW} ${vbH}`}
+        viewBox={`0 0 ${VB_W} ${VB_H}`}
         className="absolute"
         style={{ width: 1, height: 1, overflow: "hidden", opacity: 0 }}
         aria-hidden="true"
       >
-        <path ref={pathRef} d={pathD} fill="none" />
+        <path ref={pathRef} d={PATH} fill="none" />
       </svg>
 
       {/* Food plates — positioned by the animation loop */}
       {plates.map((src, i) => {
         // Vary size and opacity for a sense of depth
-        const size = baseSize + ((i % 3) - 1) * 8;
+        const size = 60 + ((i % 3) - 1) * 8;
         const opacity = 0.1 + (i % 4) * 0.03;
 
         return (

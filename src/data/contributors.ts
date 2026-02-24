@@ -8,9 +8,19 @@ export interface Contributor {
 
 export const contributors: Contributor[] = [
   {
+    name: "Ajay Ch.",
+    role: "Software Developer",
+    initials: "AC",
+  },
+  {
     name: "Madhura R.",
     role: "Founder",
     initials: "MR",
+  },
+  {
+    name: "Manohar K.",
+    role: "Software Developer",
+    initials: "MK",
   },
   {
     name: "Saketh K.",
@@ -18,23 +28,13 @@ export const contributors: Contributor[] = [
     initials: "SK",
   },
   {
-    name: "Ajay Ch.",
-    role: "Developer",
-    initials: "AC",
-  },
-  {
     name: "Samhith K.",
-    role: "Developer",
+    role: "Software Developer",
     initials: "SK",
   },
   {
     name: "Surendra M.",
-    role: "Developer",
+    role: "Software Developer",
     initials: "SM",
-  },
-  {
-    name: "Manohar K.",
-    role: "Developer",
-    initials: "MK",
   },
 ];
