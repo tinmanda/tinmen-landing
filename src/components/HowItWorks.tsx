@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import SectionWrapper from "@/components/SectionWrapper";
+import { asset } from "@/utils/asset";
 
 const steps = [
   {
@@ -7,21 +8,21 @@ const steps = [
     title: "Add your address",
     description:
       "Tell us where you are, and we'll find home chefs cooking near you.",
-    image: "/images/food/thali.png",
+    image: asset("images/food/thali.png"),
   },
   {
     number: "02",
     title: "Browse today's meals",
     description:
       "See what's available right now — fresh biryani, dal, curries, and more from kitchens in your neighborhood.",
-    image: "/images/food/biryani.png",
+    image: asset("images/food/biryani.png"),
   },
   {
     number: "03",
     title: "Order and enjoy",
     description:
       "Place your order, track delivery in real time, and enjoy a homemade meal at your doorstep.",
-    image: "/images/food/dosa.png",
+    image: asset("images/food/dosa.png"),
   },
 ];
 

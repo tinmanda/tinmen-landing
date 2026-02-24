@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Heart, Users, Sparkles } from "lucide-react";
 import SectionWrapper from "@/components/SectionWrapper";
+import { asset } from "@/utils/asset";
 
 const callouts = [
   {
@@ -50,11 +51,11 @@ export default function About() {
       <div className="mt-14 max-w-4xl mx-auto">
         <div className="flex justify-center gap-4 md:gap-8">
           {[
-            "/images/food/biryani.png",
-            "/images/food/samosa.png",
-            "/images/food/dal.png",
-            "/images/food/naan.png",
-            "/images/food/chai.png",
+            asset("images/food/biryani.png"),
+            asset("images/food/samosa.png"),
+            asset("images/food/dal.png"),
+            asset("images/food/naan.png"),
+            asset("images/food/chai.png"),
           ].map((src, i) => (
             <motion.div
               key={i}

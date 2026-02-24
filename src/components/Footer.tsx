@@ -1,3 +1,5 @@
+import { asset } from "@/utils/asset";
+
 export default function Footer() {
   return (
     <footer className="bg-warm-900 text-warm-400 pt-16 md:pt-20 pb-16 md:pb-20 px-6">
@@ -7,7 +9,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2.5 mb-4">
               <img
-                src="/images/apps/tinmen-user.png"
+                src={asset("images/apps/tinmen-user.png")}
                 alt="Tinmen"
                 className="w-9 h-9 rounded-xl"
                 loading="lazy"

@@ -3,6 +3,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion
 import { Check } from "lucide-react";
 import SectionWrapper from "@/components/SectionWrapper";
 import AppStoreBadges from "@/components/AppStoreBadges";
+import { asset } from "@/utils/asset";
 
 const valueProps = [
   "AI-generated food photos — no photography needed",
@@ -116,9 +117,9 @@ export default function ForChefs() {
               <div className="px-4 flex-1 overflow-hidden">
                 <p className="text-[7px] font-semibold text-text-secondary uppercase tracking-wider mb-2">Active Listings</p>
                 {[
-                  { name: "Chicken Biryani", img: "/images/food/biryani.png", qty: "8 left", price: "₹180" },
-                  { name: "Dal Tadka", img: "/images/food/dal.png", qty: "5 left", price: "₹120" },
-                  { name: "Paneer Masala", img: "/images/food/curry.png", qty: "3 left", price: "₹150" },
+                  { name: "Chicken Biryani", img: asset("images/food/biryani.png"), qty: "8 left", price: "₹180" },
+                  { name: "Dal Tadka", img: asset("images/food/dal.png"), qty: "5 left", price: "₹120" },
+                  { name: "Paneer Masala", img: asset("images/food/curry.png"), qty: "3 left", price: "₹150" },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2.5 bg-white rounded-2xl p-2 mb-1.5 shadow-sm">
                     <img src={item.img} alt={item.name} className="w-10 h-10 rounded-xl object-cover" />

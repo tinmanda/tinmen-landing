@@ -1,17 +1,18 @@
 import { useReducedMotion } from "framer-motion";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { asset } from "@/utils/asset";
 
 const FOODS = [
-  "/images/food/biryani.png",
-  "/images/food/dal.png",
-  "/images/food/samosa.png",
-  "/images/food/curry.png",
-  "/images/food/naan.png",
-  "/images/food/dosa.png",
-  "/images/food/idli.png",
-  "/images/food/chai.png",
-  "/images/food/thali.png",
-];
+  "images/food/biryani.png",
+  "images/food/dal.png",
+  "images/food/samosa.png",
+  "images/food/curry.png",
+  "images/food/naan.png",
+  "images/food/dosa.png",
+  "images/food/idli.png",
+  "images/food/chai.png",
+  "images/food/thali.png",
+].map(asset);
 
 export default function FoodMarquee() {
   const reduced = useReducedMotion();

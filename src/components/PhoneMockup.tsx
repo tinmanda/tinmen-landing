@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
+import { asset } from "@/utils/asset";
 
 export default function PhoneMockup({ className = "" }: { className?: string }) {
   const reduced = useReducedMotion();
@@ -59,9 +60,9 @@ export default function PhoneMockup({ className = "" }: { className?: string }) 
                 </div>
               </div>
               <div className="flex gap-1.5">
-                <img src="/images/food/biryani.png" className="w-[52px] h-[52px] rounded-xl object-cover" alt="Biryani" />
-                <img src="/images/food/curry.png" className="w-[52px] h-[52px] rounded-xl object-cover" alt="Curry" />
-                <img src="/images/food/naan.png" className="w-[52px] h-[52px] rounded-xl object-cover" alt="Naan" />
+                <img src={asset("images/food/biryani.png")} className="w-[52px] h-[52px] rounded-xl object-cover" alt="Biryani" />
+                <img src={asset("images/food/curry.png")} className="w-[52px] h-[52px] rounded-xl object-cover" alt="Curry" />
+                <img src={asset("images/food/naan.png")} className="w-[52px] h-[52px] rounded-xl object-cover" alt="Naan" />
               </div>
             </div>
 
@@ -77,9 +78,9 @@ export default function PhoneMockup({ className = "" }: { className?: string }) 
                 </div>
               </div>
               <div className="flex gap-1.5">
-                <img src="/images/food/dal.png" className="w-[52px] h-[52px] rounded-xl object-cover" alt="Dal" />
-                <img src="/images/food/thali.png" className="w-[52px] h-[52px] rounded-xl object-cover" alt="Thali" />
-                <img src="/images/food/samosa.png" className="w-[52px] h-[52px] rounded-xl object-cover" alt="Samosa" />
+                <img src={asset("images/food/dal.png")} className="w-[52px] h-[52px] rounded-xl object-cover" alt="Dal" />
+                <img src={asset("images/food/thali.png")} className="w-[52px] h-[52px] rounded-xl object-cover" alt="Thali" />
+                <img src={asset("images/food/samosa.png")} className="w-[52px] h-[52px] rounded-xl object-cover" alt="Samosa" />
               </div>
             </div>
 
@@ -95,9 +96,9 @@ export default function PhoneMockup({ className = "" }: { className?: string }) 
                 </div>
               </div>
               <div className="flex gap-1.5">
-                <img src="/images/food/dosa.png" className="w-[52px] h-[52px] rounded-xl object-cover" alt="Dosa" />
-                <img src="/images/food/idli.png" className="w-[52px] h-[52px] rounded-xl object-cover" alt="Idli" />
-                <img src="/images/food/chai.png" className="w-[52px] h-[52px] rounded-xl object-cover" alt="Chai" />
+                <img src={asset("images/food/dosa.png")} className="w-[52px] h-[52px] rounded-xl object-cover" alt="Dosa" />
+                <img src={asset("images/food/idli.png")} className="w-[52px] h-[52px] rounded-xl object-cover" alt="Idli" />
+                <img src={asset("images/food/chai.png")} className="w-[52px] h-[52px] rounded-xl object-cover" alt="Chai" />
               </div>
             </div>
           </div>

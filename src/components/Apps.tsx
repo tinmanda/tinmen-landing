@@ -1,10 +1,11 @@
 import { motion, useReducedMotion } from "framer-motion";
 import SectionWrapper from "@/components/SectionWrapper";
 import AppStoreBadges from "@/components/AppStoreBadges";
+import { asset } from "@/utils/asset";
 
 const apps = [
   {
-    icon: "/images/apps/tinmen-user.png",
+    icon: asset("images/apps/tinmen-user.png"),
     name: "Tinmen",
     tagline: "For food lovers",
     description:
@@ -12,7 +13,7 @@ const apps = [
     app: "user" as const,
   },
   {
-    icon: "/images/apps/tinmen-kitchen.png",
+    icon: asset("images/apps/tinmen-kitchen.png"),
     name: "Tinmen Kitchen",
     tagline: "For home chefs",
     description:
@@ -20,7 +21,7 @@ const apps = [
     app: "kitchen" as const,
   },
   {
-    icon: "/images/apps/tinmen-delivery.png",
+    icon: asset("images/apps/tinmen-delivery.png"),
     name: "Tinmen Delivery",
     tagline: "For delivery people",
     description:

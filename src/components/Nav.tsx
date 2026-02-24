@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUp } from "lucide-react";
+import { asset } from "@/utils/asset";
 
 const links = [
   { href: "#about", label: "About" },
@@ -72,7 +73,7 @@ export default function Nav() {
         >
           <a href="#" className="flex items-center gap-2">
             <img
-              src="/images/apps/tinmen-user.png"
+              src={asset("images/apps/tinmen-user.png")}
               alt="Tinmen"
               className="w-7 h-7 rounded-lg"
             />
@@ -158,7 +159,7 @@ export default function Nav() {
               className="flex items-center gap-2.5 mb-4"
             >
               <img
-                src="/images/apps/tinmen-user.png"
+                src={asset("images/apps/tinmen-user.png")}
                 alt="Tinmen"
                 className="w-10 h-10 rounded-xl"
               />

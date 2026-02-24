@@ -3,12 +3,12 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
 
-export default defineConfig({
-  base: '/tinmen-landing/',
+export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? '/tinmen-landing/' : '/',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
-})
+}))
