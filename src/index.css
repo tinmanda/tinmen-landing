@@ -51,24 +51,23 @@
   --font-display: 'Quicksand', system-ui, -apple-system, sans-serif;
 }
 
-/* Base reset */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/*
+ * Tailwind v4 includes Preflight (reset) in its base layer.
+ * Custom resets here are un-layered and would override ALL Tailwind utilities.
+ * Only add styles that complement (not conflict with) Tailwind.
+ */
 
-html {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-body {
-  font-family: var(--font-sans);
-  background-color: var(--color-warm-50);
-  color: var(--color-text-primary);
-  line-height: 1.6;
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-warm-50);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+  }
 }
