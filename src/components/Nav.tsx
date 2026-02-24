@@ -34,8 +34,15 @@ export default function Nav() {
               : "bg-white/70 border-warm-300/30 backdrop-blur-xl"
           }`}
         >
-          <a href="#" className="text-lg font-bold text-primary tracking-tight">
-            Tinmen
+          <a href="#" className="flex items-center gap-2">
+            <img
+              src="/images/apps/tinmen-user.png"
+              alt="Tinmen"
+              className="w-7 h-7 rounded-lg"
+            />
+            <span className="text-lg font-bold text-primary tracking-tight">
+              Tinmen
+            </span>
           </a>
 
           {/* Desktop links */}
