@@ -3,45 +3,22 @@ html {
   scroll-padding-top: 100px;
 }
 
-/* Orbital floating icon animation */
-@keyframes orbit {
-  from {
-    offset-distance: 0%;
+/* Full-width curved food marquee — infinite horizontal scroll */
+@keyframes food-marquee {
+  0% {
+    transform: translateY(-50%) translateX(0);
   }
-  to {
-    offset-distance: 100%;
-  }
-}
-
-.orbit-icon {
-  offset-path: ellipse(180px 240px at 50% 50%);
-  offset-rotate: 0deg;
-  offset-distance: 0%;
-  offset-anchor: center;
-  animation: orbit 22s linear infinite;
-  animation-delay: calc(
-    var(--start-angle, 0deg) / 360 * -22s
-  );
-}
-
-@media (max-width: 768px) {
-  .orbit-icon {
-    offset-path: ellipse(130px 180px at 50% 50%);
+  100% {
+    transform: translateY(-50%) translateX(-50%);
   }
 }
 
-/* Fallback for browsers without offset-path (very rare) */
-@supports not (offset-path: ellipse(1px 1px)) {
-  .orbit-icon {
-    animation: float-simple 4s ease-in-out infinite alternate;
-  }
+.food-marquee-track {
+  animation: food-marquee 55s linear infinite;
+}
 
-  @keyframes float-simple {
-    from {
-      transform: translate(-50%, -50%) translateY(-10px);
-    }
-    to {
-      transform: translate(-50%, -50%) translateY(10px);
-    }
+@media (prefers-reduced-motion: reduce) {
+  .food-marquee-track {
+    animation: none;
   }
 }

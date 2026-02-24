@@ -1,20 +1,35 @@
 import { motion } from "framer-motion";
 
+const APP_LINKS = {
+  user: {
+    playStore: "https://play.google.com/store/apps/details?id=com.decemberfm.tinmen",
+    appStore: "https://apps.apple.com/us/app/tinmen/id6755972405",
+  },
+  kitchen: {
+    playStore: "https://play.google.com/store/apps/details?id=com.decemberfm.tinmen.kitchen",
+    appStore: "https://apps.apple.com/us/app/tinmen-kitchen/id6758913720",
+  },
+  delivery: {
+    playStore: "https://play.google.com/store/apps/details?id=com.decemberfm.tinmen.delivery",
+    appStore: "https://apps.apple.com/us/app/tinmen-delivery/id6758910469",
+  },
+} as const;
+
 interface AppStoreBadgesProps {
-  playStoreUrl?: string;
-  appStoreUrl?: string;
+  app?: keyof typeof APP_LINKS;
   className?: string;
 }
 
 export default function AppStoreBadges({
-  playStoreUrl = "#",
-  appStoreUrl = "#",
+  app = "user",
   className = "",
 }: AppStoreBadgesProps) {
+  const links = APP_LINKS[app];
+
   return (
     <div className={`flex flex-wrap gap-3 ${className}`}>
       <motion.a
-        href={playStoreUrl}
+        href={links.playStore}
         target="_blank"
         rel="noopener noreferrer"
         whileHover={{ scale: 1.03 }}
@@ -27,7 +42,7 @@ export default function AppStoreBadges({
         Google Play
       </motion.a>
       <motion.a
-        href={appStoreUrl}
+        href={links.appStore}
         target="_blank"
         rel="noopener noreferrer"
         whileHover={{ scale: 1.03 }}
