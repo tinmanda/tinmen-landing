@@ -145,8 +145,28 @@ export default function Nav() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-40 bg-warm-50/95 backdrop-blur-md flex flex-col items-center justify-center gap-8"
+            className="fixed inset-0 z-40 bg-warm-50/95 backdrop-blur-md flex flex-col items-center justify-center gap-6"
+            onClick={(e) => {
+              if (e.target === e.currentTarget) setMenuOpen(false);
+            }}
           >
+            {/* Branding */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3 }}
+              className="flex items-center gap-2.5 mb-4"
+            >
+              <img
+                src="/images/apps/tinmen-user.png"
+                alt="Tinmen"
+                className="w-10 h-10 rounded-xl"
+              />
+              <span className="text-2xl font-bold text-primary tracking-tight">
+                Tinmen
+              </span>
+            </motion.div>
+
             {links.map((link, i) => (
               <motion.a
                 key={link.href}
@@ -154,8 +174,8 @@ export default function Nav() {
                 onClick={() => setMenuOpen(false)}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.08 }}
-                className="text-2xl font-semibold text-text-primary hover:text-primary transition-colors"
+                transition={{ delay: 0.05 + i * 0.06 }}
+                className="text-xl font-semibold text-text-primary hover:text-primary transition-colors"
               >
                 {link.label}
               </motion.a>
@@ -165,8 +185,8 @@ export default function Nav() {
               onClick={() => setMenuOpen(false)}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: links.length * 0.08 }}
-              className="mt-4 rounded-full bg-primary px-8 py-3 text-lg font-semibold text-white"
+              transition={{ delay: 0.05 + links.length * 0.06 }}
+              className="mt-2 rounded-full bg-primary px-8 py-3 text-base font-semibold text-white hover:bg-primary-light transition-colors"
             >
               Get the App
             </motion.a>
