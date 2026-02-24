@@ -21,7 +21,8 @@ export default function ForChefs() {
   const phoneY = useTransform(scrollYProgress, [0, 1], reduced ? [0, 0] : [40, -40]);
 
   return (
-    <SectionWrapper id="for-chefs" className="bg-warm-100 py-24 md:py-32 px-6">
+    <div className="relative bg-warm-100">
+    <SectionWrapper id="for-chefs" className="pt-24 md:pt-32 pb-32 md:pb-40 px-6">
       <div ref={sectionRef} className="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 md:gap-20 items-center">
         {/* Text */}
         <motion.div
@@ -42,7 +43,7 @@ export default function ForChefs() {
           </h2>
           <p className="mt-5 text-text-secondary leading-relaxed">
             Turn your love of cooking into income. Create your menu, post
-            listings when you're ready, and get orders from neighbors. We don't
+            listings when you're ready, and get orders from the neighborhood. We don't
             take a cut — every rupee goes to you.
           </p>
 
@@ -150,5 +151,12 @@ export default function ForChefs() {
         </motion.div>
       </div>
     </SectionWrapper>
+      {/* Bottom curve — outside SectionWrapper so entrance animation doesn't shift it */}
+      <div className="absolute bottom-0 left-0 right-0 z-10">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" className="w-full h-12 md:h-16 block">
+          <path d="M0,60 L1440,60 L1440,40 Q720,0 0,40 Z" fill="var(--color-primary)" />
+        </svg>
+      </div>
+    </div>
   );
 }

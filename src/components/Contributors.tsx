@@ -12,9 +12,10 @@ export default function Contributors() {
   const reduced = useReducedMotion();
 
   return (
+    <div className="relative bg-warm-50">
     <SectionWrapper
       id="contributors"
-      className="bg-warm-50 py-24 md:py-32 px-6"
+      className="pt-24 md:pt-32 pb-32 md:pb-40 px-6"
     >
       <div className="max-w-5xl mx-auto">
         <div className="text-center">
@@ -25,7 +26,7 @@ export default function Contributors() {
             Built by contributors
           </h2>
           <p className="mt-4 text-text-secondary max-w-lg mx-auto text-base">
-            Tinmen is made by people who believe good food should be accessible to
+            Tinmen is made by people who believe homemade food should be accessible to
             everyone.
           </p>
         </div>
@@ -85,6 +86,14 @@ export default function Contributors() {
           ))}
         </motion.div>
       </div>
+
     </SectionWrapper>
+      {/* Bottom curve — outside SectionWrapper so entrance animation doesn't shift it */}
+      <div className="absolute bottom-0 left-0 right-0 z-10">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" className="w-full h-12 md:h-16 block">
+          <path d="M0,60 L1440,60 L1440,40 Q720,0 0,40 Z" fill="var(--color-warm-900)" />
+        </svg>
+      </div>
+    </div>
   );
 }

@@ -1,12 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="relative bg-warm-900 text-warm-400 pt-24 md:pt-28 pb-16 md:pb-20 px-6">
-      {/* Curve from Contributors (warm-50) into footer */}
-      <div className="absolute top-0 left-0 right-0">
-        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" className="w-full h-12 md:h-16 block">
-          <path d="M0,0 L1440,0 L1440,20 Q720,60 0,20 Z" fill="var(--color-warm-50)" />
-        </svg>
-      </div>
+    <footer className="bg-warm-900 text-warm-400 pt-16 md:pt-20 pb-16 md:pb-20 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 mb-14">
           {/* Brand */}
@@ -23,8 +17,8 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm leading-relaxed text-warm-500">
-              Homemade food, delivered fresh. Connecting home chefs with hungry
-              neighbors.
+              Homemade food, delivered fresh. Connecting home chefs with the
+              neighborhood.
             </p>
           </div>
 

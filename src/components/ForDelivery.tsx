@@ -7,7 +7,7 @@ import AppStoreBadges from "@/components/AppStoreBadges";
 const valueProps = [
   "Quick AI-powered sign-up — no paperwork",
   "Choose your own hours and delivery zone",
-  "Pick up from chefs, deliver to neighbors",
+  "Pick up from chefs, deliver to doorsteps",
   "Track earnings in real time",
 ];
 
@@ -21,16 +21,11 @@ export default function ForDelivery() {
   const phoneY = useTransform(scrollYProgress, [0, 1], reduced ? [0, 0] : [40, -40]);
 
   return (
+    <div className="relative bg-primary">
     <SectionWrapper
       id="for-delivery"
-      className="relative bg-primary pt-32 md:pt-40 pb-24 md:pb-32 px-6"
+      className="pt-24 md:pt-32 pb-32 md:pb-40 px-6"
     >
-      {/* Curve from For Chefs (warm-100) into this section */}
-      <div className="absolute top-0 left-0 right-0">
-        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" className="w-full h-12 md:h-16 block">
-          <path d="M0,0 L1440,0 L1440,20 Q720,60 0,20 Z" fill="var(--color-warm-100)" />
-        </svg>
-      </div>
       <div ref={sectionRef} className="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 md:gap-20 items-center">
         {/* Phone mockup — matches tinmen-delivery deliver.tsx */}
         <motion.div
@@ -183,6 +178,14 @@ export default function ForDelivery() {
           <AppStoreBadges className="mt-8" app="delivery" />
         </motion.div>
       </div>
+
     </SectionWrapper>
+      {/* Bottom curve — outside SectionWrapper so entrance animation doesn't shift it */}
+      <div className="absolute bottom-0 left-0 right-0 z-10">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" className="w-full h-12 md:h-16 block">
+          <path d="M0,60 L1440,60 L1440,40 Q720,0 0,40 Z" fill="var(--color-warm-50)" />
+        </svg>
+      </div>
+    </div>
   );
 }

@@ -38,7 +38,7 @@ export default function PhoneMockup({ className = "" }: { className?: string }) 
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-[8px] text-text-secondary">Delivering to</p>
-              <p className="text-[10px] font-semibold text-primary truncate">Koramangala, Bangalore</p>
+              <p className="text-[10px] font-semibold text-primary truncate">Banjara Hills, Hyderabad</p>
             </div>
             <svg className="w-3 h-3 text-warm-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
@@ -51,10 +51,10 @@ export default function PhoneMockup({ className = "" }: { className?: string }) 
             <div className="bg-[#E5DCCC] rounded-2xl p-2.5">
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
-                  <span className="text-[7px] font-bold text-primary">FK</span>
+                  <span className="text-[7px] font-bold text-primary">RD</span>
                 </div>
                 <div>
-                  <p className="text-[9px] font-bold text-text-primary" style={{ letterSpacing: "-0.3px" }}>Fatima's Kitchen</p>
+                  <p className="text-[9px] font-bold text-text-primary" style={{ letterSpacing: "-0.3px" }}>Rina Das</p>
                   <p className="text-[7px] text-text-secondary">Cooking today</p>
                 </div>
               </div>
@@ -69,10 +69,10 @@ export default function PhoneMockup({ className = "" }: { className?: string }) 
             <div className="bg-[#E5DCCC] rounded-2xl p-2.5">
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
-                  <span className="text-[7px] font-bold text-primary">PH</span>
+                  <span className="text-[7px] font-bold text-primary">RS</span>
                 </div>
                 <div>
-                  <p className="text-[9px] font-bold text-text-primary" style={{ letterSpacing: "-0.3px" }}>Priya's Home</p>
+                  <p className="text-[9px] font-bold text-text-primary" style={{ letterSpacing: "-0.3px" }}>Rosmeen Shaik</p>
                   <p className="text-[7px] text-text-secondary">Cooking today</p>
                 </div>
               </div>
@@ -87,10 +87,10 @@ export default function PhoneMockup({ className = "" }: { className?: string }) 
             <div className="bg-[#E5DCCC] rounded-2xl p-2.5">
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
-                  <span className="text-[7px] font-bold text-primary">AM</span>
+                  <span className="text-[7px] font-bold text-primary">NK</span>
                 </div>
                 <div>
-                  <p className="text-[9px] font-bold text-text-primary" style={{ letterSpacing: "-0.3px" }}>Amma's Meals</p>
+                  <p className="text-[9px] font-bold text-text-primary" style={{ letterSpacing: "-0.3px" }}>Nancy Keps</p>
                   <p className="text-[7px] text-text-secondary">Cooking tomorrow</p>
                 </div>
               </div>

@@ -23,8 +23,8 @@ export default function Hero() {
 
   return (
     <section className="relative bg-primary min-h-[100dvh] flex items-center overflow-clip">
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary-dark" />
+      {/* Subtle gradient overlay — stays flat primary at bottom to match curve */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/20 via-transparent to-transparent" />
 
       {/* Curved food marquee — flows left-to-right behind all content */}
       <FoodMarquee />
@@ -41,23 +41,21 @@ export default function Hero() {
             variants={reduced ? undefined : itemVariants}
             className="text-xs font-semibold tracking-widest uppercase text-white/40 mb-4"
           >
-            Home-cooked meals, delivered
+            From kitchens in your neighborhood
           </motion.p>
           <motion.h1
             variants={reduced ? undefined : itemVariants}
             className="text-4xl sm:text-5xl lg:text-6xl xl:text-[4.25rem] font-bold text-white tracking-tight leading-[1.05]"
           >
-            Real food from
-            <br />
-            <span className="text-warm-300">real kitchens</span>
+            Home-cooked food, <span className="text-warm-300">delivered</span>
           </motion.h1>
           <motion.p
             variants={reduced ? undefined : itemVariants}
             className="mt-6 text-base sm:text-lg text-white/60 max-w-lg mx-auto md:mx-0 leading-relaxed"
           >
-            Your neighbors are incredible cooks. Tinmen connects you with home
-            chefs in your area for fresh, authentic meals — made with love,
-            delivered to your door.
+            Your neighborhood is full of incredible cooks. Tinmen connects you
+            with home chefs in your area for fresh, authentic food — made with
+            love, delivered to your door.
           </motion.p>
           <motion.div
             variants={reduced ? undefined : itemVariants}
@@ -82,12 +80,13 @@ export default function Hero() {
           </motion.div>
 
           {/* Social proof */}
-          <motion.div
+          <motion.a
+            href="#contributors"
             variants={reduced ? undefined : itemVariants}
-            className="mt-10 flex items-center gap-3 justify-center md:justify-start"
+            className="mt-10 flex items-center gap-3 justify-center md:justify-start group cursor-pointer"
           >
             <div className="flex -space-x-2">
-              {["MK", "PS", "AR", "LD"].map((initials, i) => (
+              {["MR", "SK", "AC", "SM"].map((initials, i) => (
                 <div
                   key={i}
                   className="w-8 h-8 rounded-full bg-white/10 border-2 border-primary flex items-center justify-center text-[10px] font-bold text-white/70"
@@ -96,10 +95,10 @@ export default function Hero() {
                 </div>
               ))}
             </div>
-            <p className="text-xs text-white/40">
+            <p className="text-xs text-white/40 group-hover:text-white/60 transition-colors">
               Built by a community of contributors
             </p>
-          </motion.div>
+          </motion.a>
         </motion.div>
 
         {/* Phone mockup */}
@@ -109,16 +108,9 @@ export default function Hero() {
       </div>
 
       {/* Bottom curve transition to next section */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg
-          viewBox="0 0 1440 80"
-          preserveAspectRatio="none"
-          className="w-full h-16 md:h-24"
-        >
-          <path
-            d="M0,80 L0,40 Q720,0 1440,40 L1440,80 Z"
-            fill="var(--color-warm-50)"
-          />
+      <div className="absolute bottom-0 left-0 right-0 z-10">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" className="w-full h-12 md:h-16 block">
+          <path d="M0,60 L1440,60 L1440,40 Q720,0 0,40 Z" fill="var(--color-warm-50)" />
         </svg>
       </div>
     </section>

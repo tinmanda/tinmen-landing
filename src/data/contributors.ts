@@ -8,39 +8,33 @@ export interface Contributor {
 
 export const contributors: Contributor[] = [
   {
-    name: "Mukesh",
-    role: "Founder & Full-Stack",
-    initials: "MK",
-    github: "#",
+    name: "Madhura R.",
+    role: "Founder",
+    initials: "MR",
   },
   {
-    name: "Priya S.",
-    role: "UI/UX Design",
-    initials: "PS",
-    linkedin: "#",
+    name: "Saketh K.",
+    role: "Head of Operations",
+    initials: "SK",
   },
   {
-    name: "Arjun R.",
-    role: "Backend & Cloud Code",
-    initials: "AR",
-    github: "#",
+    name: "Ajay Ch.",
+    role: "Developer",
+    initials: "AC",
   },
   {
-    name: "Lakshmi D.",
-    role: "Mobile Development",
-    initials: "LD",
-    github: "#",
-    linkedin: "#",
+    name: "Samhith K.",
+    role: "Developer",
+    initials: "SK",
   },
   {
-    name: "Ravi K.",
-    role: "Delivery Operations",
-    initials: "RK",
-  },
-  {
-    name: "Sneha M.",
-    role: "Community & Testing",
+    name: "Surendra M.",
+    role: "Developer",
     initials: "SM",
-    linkedin: "#",
+  },
+  {
+    name: "Manohar K.",
+    role: "Developer",
+    initials: "MK",
   },
 ];
