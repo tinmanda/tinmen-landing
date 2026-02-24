@@ -16,8 +16,14 @@ export default function ForDelivery() {
   return (
     <SectionWrapper
       id="for-delivery"
-      className="bg-primary py-24 md:py-32 px-6"
+      className="relative bg-primary pt-32 md:pt-40 pb-24 md:pb-32 px-6"
     >
+      {/* Curve from For Chefs (warm-100) into this section */}
+      <div className="absolute top-0 left-0 right-0">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" className="w-full h-12 md:h-16 block">
+          <path d="M0,0 L1440,0 L1440,20 Q720,60 0,20 Z" fill="var(--color-warm-100)" />
+        </svg>
+      </div>
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 md:gap-20 items-center">
         {/* Phone mockup — matches tinmen-delivery deliver.tsx */}
         <motion.div

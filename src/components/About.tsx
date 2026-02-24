@@ -31,7 +31,13 @@ export default function About() {
   const reduced = useReducedMotion();
 
   return (
-    <SectionWrapper id="about" className="bg-warm-50 py-24 md:py-32 px-6">
+    <SectionWrapper id="about" className="relative bg-warm-50 pt-32 md:pt-40 pb-24 md:pb-32 px-6">
+      {/* Curve from For Delivery (primary) into this section */}
+      <div className="absolute top-0 left-0 right-0">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" className="w-full h-12 md:h-16 block">
+          <path d="M0,0 L1440,0 L1440,20 Q720,60 0,20 Z" fill="var(--color-primary)" />
+        </svg>
+      </div>
       <div className="max-w-3xl mx-auto text-center">
         <span className="text-xs font-semibold tracking-widest uppercase text-primary/60">
           Our Mission
