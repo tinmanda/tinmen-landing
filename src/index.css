@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  /* Primary Brand (Deep Forest Green) */
+  --color-primary: #1B3D2F;
+  --color-primary-dark: #143328;
+  --color-primary-light: #2A5A45;
+
+  /* Accent (Tinmen Brand Red) */
+  --color-accent: #df1e10;
+  --color-accent-light: #E84A3F;
+  --color-accent-muted: #C8E64C;
+
+  /* Warm Gray Scale */
+  --color-warm-50: #FAF8F3;
+  --color-warm-100: #F5F1EA;
+  --color-warm-200: #EDE9E1;
+  --color-warm-300: #E5E1D8;
+  --color-warm-400: #D4CFC6;
+  --color-warm-500: #A8A29E;
+  --color-warm-600: #78716C;
+  --color-warm-700: #57534E;
+  --color-warm-800: #3D3835;
+  --color-warm-900: #1A1815;
+
+  /* Semantic */
+  --color-success: #1B7A5A;
+  --color-success-light: #E6F4ED;
+  --color-error: #C44B3F;
+  --color-error-light: #FCEAE8;
+  --color-warning: #D4930A;
+  --color-warning-light: #FDF4D9;
+
+  /* Surfaces */
+  --color-surface: #FFFFFF;
+  --color-surface-muted: #EDE9E1;
+  --color-surface-subtle: #E8E4DC;
+
+  /* Text */
+  --color-text-primary: #1A3C34;
+  --color-text-secondary: #717171;
+  --color-text-tertiary: #999999;
+
+  /* Border */
+  --color-border: #E5E1D8;
+  --color-border-light: #F0ECE4;
+  --color-border-dark: #D4CFC6;
+
+  /* Font family */
+  --font-sans: 'Quicksand', system-ui, -apple-system, sans-serif;
+  --font-display: 'Quicksand', system-ui, -apple-system, sans-serif;
+}
+
+/* Base reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-warm-50);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+}
